@@ -1,3 +1,11 @@
+<!-- default file list -->
+*Files to look at*:
+
+* **[HomeController.cs](./CS/Example_FormLayout/Controllers/HomeController.cs)**
+* [Category.cs](./CS/Example_FormLayout/Models/Category.cs)
+* [CategoryFormLayoutPartial.cshtml](./CS/Example_FormLayout/Views/Home/CategoryFormLayoutPartial.cshtml)
+* [Index.cshtml](./CS/Example_FormLayout/Views/Home/Index.cshtml)
+<!-- default file list end -->
 # FormLayout - How to add fields dynamically via jQuery.ajax
 
 
