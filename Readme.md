@@ -8,7 +8,7 @@
 <!-- default file list end -->
 # FormLayout - How to add fields dynamically via jQuery.ajax
 <!-- run online -->
-**[[Run Online]](https://codecentral.devexpress.com/t328446)**
+**[[Run Online]](https://codecentral.devexpress.com/t328446/)**
 <!-- run online end -->
 
 
