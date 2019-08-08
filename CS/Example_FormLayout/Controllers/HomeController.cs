@@ -20,14 +20,16 @@ namespace Example_FormLayout.Controllers
         public ActionResult CategoryFormLayoutPartial(string command)
         {
             Category p = Session["CategoryData"] as Category;
-            string[] results = command.Split(';');
-            if (results[0] == "add")
+            string[] results = command.Split(';');            
+            string action = results[0];
+            int index = Convert.ToInt32(results[1]);
+            if (action == "add")
             {
                 p.Products.Add(String.Empty);
             }
             else
             {
-                p.Products.RemoveAt(Convert.ToInt32(results[1]));
+                p.Products.RemoveAt(index);
             }
             return PartialView(p);
         }
