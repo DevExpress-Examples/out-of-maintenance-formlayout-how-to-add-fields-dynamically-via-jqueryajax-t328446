@@ -12,11 +12,15 @@ namespace Example_FormLayout.Controllers
 
         public ActionResult Index()
         {
-            var model = new Category() { ID = 1, Name = "Fruits", Products = new List<string>() };
+            var model = new Category() { ID = 1, Name = "Fruits", Products = new List<Product>() };
             Session["CategoryData"] = model;
             return View(model);
         }
 
+        [HttpPost]
+        public ActionResult Index(Category cat) {
+            return View(cat);
+        }
         public ActionResult CategoryFormLayoutPartial(string command)
         {
             Category p = Session["CategoryData"] as Category;
@@ -25,7 +29,7 @@ namespace Example_FormLayout.Controllers
             int index = Convert.ToInt32(results[1]);
             if (action == "add")
             {
-                p.Products.Add(String.Empty);
+                p.Products.Add(new Product() { ProductName = String.Empty });
             }
             else
             {

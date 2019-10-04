@@ -24,7 +24,7 @@
     }
     function OnButtonClick(s, e, index) {
         storeValues();        
-        delete initialState[propName+"["+index+"]"];
+        delete initialState[propName + "[" + index + "].ProductName"];
         var str = "remove;" + index;
         $.ajax({
             url: '@Url.Action("CategoryFormLayoutPartial", "Home")',
@@ -57,7 +57,11 @@
         });
     }
 </script>
-<div id="ajaxDiv">
-    @Html.Partial("CategoryFormLayoutPartial")
-</div>
+@using (Html.BeginForm()) {
+    <input type="submit" value="post" />
+    <div id="ajaxDiv">
+        @Html.Partial("CategoryFormLayoutPartial")
+    </div>
+}
+
 

@@ -31,12 +31,12 @@
                                        For i As Integer = 0 To Model.Products.Count - 1
                                            Dim index As Integer = i
                                            settings.Items.Add(Sub(s)
-                                                                  s.Caption = "Product " + i.ToString()
+                                                                  s.Caption = "Product " + index.ToString()
                                                                   s.SetNestedContent(Sub()
-                                                                                         Html.DevExpress().ButtonEditFor(Function(m) m.Products(index), Sub(be)
-                                                                                                                                                            be.Properties.Buttons.Add("x")
-                                                                                                                                                            be.Properties.ClientSideEvents.ButtonClick = String.Format("function(s,e) {{ OnButtonClick(s,e,{0}); }}", index)
-                                                                                                                                                        End Sub).Render()
+                                                                                         Html.DevExpress().ButtonEditFor(Function(m) m.Products(index).ProductName, Sub(be)
+                                                                                                                                                                        be.Properties.Buttons.Add("x")
+                                                                                                                                                                        be.Properties.ClientSideEvents.ButtonClick = String.Format("function(s,e) {{ OnButtonClick(s,e,{0}); }}", index)
+                                                                                                                                                                    End Sub).Render()
                                                                                      End Sub)
                                                               End Sub)
                                        Next
