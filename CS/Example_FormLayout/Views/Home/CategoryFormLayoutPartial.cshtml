@@ -33,11 +33,12 @@
     });
     for (int i = 0; i < Model.Products.Count; i++)
     {
-        settings.Items.Add(m => m.Products[i], item => {
+        int index = i;
+        settings.Items.Add(m => m.Products[index].ProductName, item => {
             item.Caption = "Product";
             item.NestedExtension().ButtonEdit(bs => {
                 bs.Properties.Buttons.Add("x");
-                bs.Properties.ClientSideEvents.ButtonClick = String.Format("function(s,e) {{ OnButtonClick(s,e,{0}); }}", i);
+                bs.Properties.ClientSideEvents.ButtonClick = String.Format("function(s,e) {{ OnButtonClick(s,e,{0}); }}", index);
             });
         });
     }

@@ -1,6 +1,6 @@
 ﻿
 <script>
-var initialState;
+    var initialState;
     let propName = "Products";
     var staticEditorsCount = 2;//there are two static edtitors ID and Name
     function storeValues() {
@@ -24,7 +24,7 @@ var initialState;
     }
     function OnButtonClick(s, e, index) {
         storeValues();
-        delete initialState[propName+"["+index+"]"];
+        delete initialState[propName + "[" + index + "].ProductName"];
         var str = "remove;" + index;
         $.ajax({
             url: '@Url.Action("CategoryFormLayoutPartial", "Home")',
@@ -57,6 +57,10 @@ var initialState;
         });
     }
 </script>
-<div id="ajaxDiv">
-    @Html.Partial("CategoryFormLayoutPartial")
-</div>
+@Using Html.BeginForm()
+    @<input type="submit" value="post" />
+    @<div id="ajaxDiv">
+        @Html.Partial("CategoryFormLayoutPartial")
+    </div>
+End Using
+
